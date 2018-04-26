@@ -6,26 +6,30 @@ using UnityEngine.UI;
 public class print : MonoBehaviour {
     GameObject _GM;
     GameObject[] npcs;
+
     float correctness;
-    int knowninfo;
     float percentageknown;
+    int knowninfo;
+
 	// Use this for initialization
     void Start()
     {
         _GM = GameObject.Find("GameManager");
+
     }
+
+    // Begin printing a log of the correctness every second (Debugging)
 	public void updating () 
     {
-
-        npcs = GameObject.FindGameObjectsWithTag("NPC");
         InvokeRepeating("Log", 1.0f, 1.0f);
-        
+        npcs = GameObject.FindGameObjectsWithTag("NPC");
     }
 	
-	// Update is called once per frame
 	void Update () 
     {
-        
+        // If the simulation is running, create a printout of the measures of
+        // how much of the information is known by how many and a measure of the
+        // correctness of that information over the population.
         if (_GM.GetComponent<Manager>().running == true)
         {
             knowninfo = 0;
@@ -43,6 +47,7 @@ public class print : MonoBehaviour {
         }
         
 	}
+    // Debugging.
     void Log()
     {
         Debug.Log(correctness);

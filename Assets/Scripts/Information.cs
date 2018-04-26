@@ -23,10 +23,9 @@ public class Information
     // How many know this?
     public int known;
 
-
+    // Adds values into the information chunk
         public void Generate(uint _id, bool isMaster, float _time, float _importance, List<int> _content)
     {
-            // Add in information type (Gossip, Work related, etc)
             id = _id;
             master = isMaster;
             time = _time;

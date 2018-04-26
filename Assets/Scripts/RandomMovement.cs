@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RandomMovement : MonoBehaviour
 {
+    // A simple class designed to send the NPCs around the map to various points.
     private UnityEngine.AI.NavMeshAgent agent;
 
     void Start()
@@ -16,10 +17,10 @@ public class RandomMovement : MonoBehaviour
     {
         UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
-            GoToNextPoint();
+            NextPoint();
     }
 
-    private void GoToNextPoint()
+    private void NextPoint()
     {
         UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         float x = Random.Range(-60, 60);

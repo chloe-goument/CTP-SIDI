@@ -13,7 +13,8 @@ public class Spawner : MonoBehaviour {
 
 	private GameObject currentNPC;
 
-	// Use this for initialization
+	// Depreciated code that used to spawn in the NPCs,
+    // butchered and pulled apart to build the new NPC_Builder class.
 	void Start ()
 	{
    //     for (int q = 0; q < npcquantity; q++)
